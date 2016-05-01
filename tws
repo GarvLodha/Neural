@@ -1,0 +1,3 @@
+# !/bin/sh
+cd ~/IBJts/unixmacosx/IBJts/
+java -cp jts.jar:hsqldb.jar:jhall.jar:jfreechart-1.0.9.jar:jcommon-1.0.12.jar:rss.jar:other.jar -Xmx512M jclient.LoginFrame ./

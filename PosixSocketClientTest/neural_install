@@ -1,0 +1,4 @@
+# !/bin/bash
+sudo cp /home/garv/NeuralAlgo/neural /usr/local/bin
+sudo cp /home/garv/NeuralAlgo/neural_start /usr/local/bin
+sudo cp /home/garv/NeuralAlgo/neural_dbUpdate /usr/local/bin

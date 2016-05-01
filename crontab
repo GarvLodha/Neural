@@ -1,0 +1,24 @@
+# /etc/crontab: system-wide crontab
+# Unlike any other crontab you don't have to run the `crontab'
+# command to install the new version when you edit this file
+# and files in /etc/cron.d. These files also have username fields,
+# that none of the other crontabs do.
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# m h dom mon dow user	command
+17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
+25 6	* * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily )
+47 6	* * 7	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.weekly )
+52 6	1 * *	root	test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.monthly )
+##00 6    * * * 	root	sudo apt-get install mutt smtp fetchmail procmail 
+##05 09    * * *   garv	/usr/bin/screen -dmUSfa AutomationTestBarBreakout -c .screenBarBreakout
+##06 17   * * *   root    /usr/bin/screen -d -p 2 -X exec /home/garv/IBJts/PaperBarBreakout/PaperBarBreakoutedemoPort7500ClientId0 -p 7500 -s 3 ~/IBJts/PaperBarBreakout/Portfolio.list
+
+##To start GUI based Applications use 'export DISPLAY=:0.0':
+##37 19   * * *   root	export DISPLAY=:0.0 && /usr/bin/gnome-terminal  
+#47 17    * * *   garv	cd /home/garv/BAShDemoFiles/mailMyIP.sh
+00 08    * * *   garv	cd /home/garv/BAShDemoFiles && ./mailMyIP.sh
+30 09	* * 1-5	garv	cd /home/garv/NeuralAlgo && neural > output.log
+##27 01    * * 1-5   garv	cd /home/garv/NeuralAlgo && neural portfolio0L.dat > output.log
